@@ -1,0 +1,53 @@
+<h1>oauth2orize-wmrm</h1>
+
+<h2>Web Message response mode support for OAuth2orize.</h2>
+
+<div>
+  <h1 id="oauth2orize-wmrm">oauth2orize-wmrm</h1>
+<p><a href="https://www.npmjs.com/package/oauth2orize-wmrm"><img src="https://img.shields.io/npm/v/oauth2orize-wmrm.svg?label=version" alt="Version"></a>
+<a href="https://travis-ci.org/jaredhanson/oauth2orize-wmrm"><img src="https://img.shields.io/travis/jaredhanson/oauth2orize-wmrm.svg" alt="Build"></a>
+<a href="https://codeclimate.com/github/jaredhanson/oauth2orize-wmrm"><img src="https://img.shields.io/codeclimate/github/jaredhanson/oauth2orize-wmrm.svg?label=quality" alt="Quality"></a>
+<a href="https://coveralls.io/r/jaredhanson/oauth2orize-wmrm"><img src="https://img.shields.io/coveralls/jaredhanson/oauth2orize-wmrm.svg" alt="Coverage"></a>
+<a href="https://david-dm.org/jaredhanson/oauth2orize-wmrm"><img src="https://img.shields.io/david/jaredhanson/oauth2orize-wmrm.svg" alt="Dependencies"></a></p>
+<p><a href="https://github.com/jaredhanson/oauth2orize">OAuth2orize</a> response mode plugin
+providing support for <a href="https://tools.ietf.org/html/draft-sakimura-oauth-wmrm-00">Web Message Response Mode</a>.</p>
+<p>This response mode uses <a href="https://www.w3.org/TR/webmessaging/">HTML5 Web Messaging</a>
+instead of a redirect URI to return authorization responses from the
+authorization server.</p>
+<h2 id="install">Install</h2>
+<pre><code class="lang-bash">$ npm install oauth2orize-wmrm
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h4 id="parse-request-extensions">Parse Request Extensions</h4>
+<p>The web message response mode defines additional parameters needed in the
+authorization request.  Register support for these extensions with a <code>Server</code>
+instance in order to parse the parameters:</p>
+<pre><code class="lang-js">server.grant(<span class="built_in">require</span>(<span class="string">'oauth2orize-wmrm'</span>).extensions());
+</code></pre>
+<h4 id="add-response-mode">Add Response Mode</h4>
+<p>For each grant in which web message response mode is desired, add support by
+passing a <code>modes</code> option containing Web Message response mode.  For example,
+using the token grant:</p>
+<pre><code class="lang-js">server.grant({ 
+  <span class="attr">modes</span>: {
+    <span class="attr">web_message</span>: <span class="built_in">require</span>(<span class="string">'oauth2orize-wmrm'</span>)
+  } }, 
+  oauth2orize.grant.token(<span class="function"><span class="keyword">function</span>(<span class="params">client, user, ares, done</span>) </span>{
+    <span class="comment">// <span class="doctag">TODO:</span> issue token</span>
+  })
+);
+</code></pre>
+<h2 id="considerations">Considerations</h2>
+<h4 id="specification">Specification</h4>
+<p>This module is implemented based on <a href="https://tools.ietf.org/html/draft-sakimura-oauth-wmrm-00">OAuth 2.0 Web Message Response Mode</a>,
+draft version 00.  As a draft, the specification remains a work-in-progress and
+is <em>not</em> final.  The specification is under discussion within the <a href="https://datatracker.ietf.org/wg/oauth/about/">OAuth Working Group</a>
+of the <a href="https://www.ietf.org/">IETF</a>.  Implementers are encouraged to track the
+progress of this specification and update implementations as necessary.
+Furthermore, the implications of relying on non-final specifications should be
+understood prior to deployment.</p>
+<h2 id="license">License</h2>
+<p><a href="http://opensource.org/licenses/MIT">The MIT License</a></p>
+<p>Copyright (c) 2016-2017 Jared Hanson <a href="[http://jaredhanson.net/](http://jaredhanson.net/)">[http://jaredhanson.net/](http://jaredhanson.net/)</a></p>
+<p><a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-wmrm'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-wmrm.svg' /></a></p>
+</div>

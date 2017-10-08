@@ -1,0 +1,47 @@
+<h1>oauth2orize-redelegate</h1>
+
+<h2>Token redelegation and chaining exchange for OAuth2orize.</h2>
+
+<div>
+  <h1 id="oauth2orize-redelegate">oauth2orize-redelegate</h1>
+<p><a href="https://www.npmjs.com/package/oauth2orize-redelegate"><img src="https://img.shields.io/npm/v/oauth2orize-redelegate.svg?label=version" alt="Version"></a>
+<a href="https://travis-ci.org/jaredhanson/oauth2orize-redelegate"><img src="https://img.shields.io/travis/jaredhanson/oauth2orize-redelegate.svg" alt="Build"></a>
+<a href="https://codeclimate.com/github/jaredhanson/oauth2orize-redelegate"><img src="https://img.shields.io/codeclimate/github/jaredhanson/oauth2orize-redelegate.svg?label=quality" alt="Quality"></a>
+<a href="https://coveralls.io/r/jaredhanson/oauth2orize-redelegate"><img src="https://img.shields.io/coveralls/jaredhanson/oauth2orize-redelegate.svg" alt="Coverage"></a>
+<a href="https://david-dm.org/jaredhanson/oauth2orize-redelegate"><img src="https://img.shields.io/david/jaredhanson/oauth2orize-redelegate.svg" alt="Dependencies"></a></p>
+<p>Token redelegation and chaining exchange for <a href="https://github.com/jaredhanson/oauth2orize">OAuth2orize</a>.</p>
+<p>This exchange is used by a resource server to exchange an access token it has
+recieved from a client for a derivative token for use with another resource
+server.  This scenario facilitiates service chaining, in which one service needs
+to communicate with another service in order to fulfill the original request.</p>
+<h2 id="install">Install</h2>
+<pre><code class="lang-bash">$ npm install oauth2orize-redelegate
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h4 id="register-exchange">Register Exchange</h4>
+<p>Register the exchange with a <code>Server</code> instance and implement the <code>issue</code>
+callback:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> redelegate = <span class="built_in">require</span>(<span class="string">'oauth2orize-redelegate'</span>).exchange.redelegate;
+
+server.exchange(<span class="string">'urn:ietf:params:oauth:grant_type:redelegate'</span>, redelegate(<span class="function"><span class="keyword">function</span>(<span class="params">client, token, scope, done</span>) </span>{
+  <span class="comment">// <span class="doctag">TODO:</span></span>
+  <span class="comment">// 1. Verify the access token.</span>
+  <span class="comment">// 2. Ensure that the token is being exchanged by a resource server for which</span>
+  <span class="comment">//    it is intended.</span>
+  <span class="comment">// 3. Issue a deriviative token with equal or lesser scope.</span>
+});
+</code></pre>
+<h2 id="considerations">Considerations</h2>
+<h4 id="specification">Specification</h4>
+<p>This module is implemented based on <a href="https://tools.ietf.org/html/draft-richer-oauth-chain-00">A Method of Bearer Token Redelegation and Chaining for OAuth 2</a>,
+draft version 00.  As a draft, the specification remains a work-in-progress and
+is <em>not</em> final.  The specification is under discussion within the <a href="https://datatracker.ietf.org/wg/oauth/about/">OAuth Working Group</a>
+of the <a href="https://www.ietf.org/">IETF</a>.  Implementers are encouraged to track the
+progress of this specification and update implementations as necessary.
+Furthermore, the implications of relying on non-final specifications should be
+understood prior to deployment.</p>
+<h2 id="license">License</h2>
+<p><a href="http://opensource.org/licenses/MIT">The MIT License</a></p>
+<p>Copyright (c) 2014-2017 Jared Hanson <a href="[http://jaredhanson.net/](http://jaredhanson.net/)">[http://jaredhanson.net/](http://jaredhanson.net/)</a></p>
+<p><a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-redelegate'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-redelegate.svg' /></a></p>
+</div>

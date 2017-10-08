@@ -1,0 +1,37 @@
+<h1>oauth2orize-fprm</h1>
+
+<h2>Form Post response mode support for OAuth2orize.</h2>
+
+<div>
+  <h1 id="oauth2orize-fprm">oauth2orize-fprm</h1>
+<p><a href="https://www.npmjs.com/package/oauth2orize-fprm"><img src="https://img.shields.io/npm/v/oauth2orize-fprm.svg?label=version" alt="Version"></a>
+<a href="https://travis-ci.org/jaredhanson/oauth2orize-fprm"><img src="https://img.shields.io/travis/jaredhanson/oauth2orize-fprm.svg" alt="Build"></a>
+<a href="https://codeclimate.com/github/jaredhanson/oauth2orize-fprm"><img src="https://img.shields.io/codeclimate/github/jaredhanson/oauth2orize-fprm.svg?label=quality" alt="Quality"></a>
+<a href="https://coveralls.io/r/jaredhanson/oauth2orize-fprm"><img src="https://img.shields.io/coveralls/jaredhanson/oauth2orize-fprm.svg" alt="Coverage"></a>
+<a href="https://david-dm.org/jaredhanson/oauth2orize-fprm"><img src="https://img.shields.io/david/jaredhanson/oauth2orize-fprm.svg" alt="Dependencies"></a></p>
+<p><a href="https://github.com/jaredhanson/oauth2orize">OAuth2orize</a> response mode plugin
+providing support for <a href="https://openid.net/specs/oauth-v2-form-post-response-mode-1_0.html">Form Post Response Mode</a>.</p>
+<p>This response mode uses the HTTP POST method instead of a redirect URI to return
+authorization responses from the authorization server.</p>
+<h2 id="install">Install</h2>
+<pre><code class="lang-bash">$ npm install oauth2orize-fprm
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h4 id="add-response-mode">Add Response Mode</h4>
+<p>For each grant in which form post response mode is desired, add support by
+passing a <code>modes</code> option containing form post response mode.  For example,
+using the token grant:</p>
+<pre><code class="lang-js">server.grant({ 
+  <span class="attr">modes</span>: {
+    <span class="attr">form_post</span>: <span class="built_in">require</span>(<span class="string">'oauth2orize-fprm'</span>)
+  } }, 
+  oauth2orize.grant.token(<span class="function"><span class="keyword">function</span>(<span class="params">client, user, ares, done</span>) </span>{
+    <span class="comment">// <span class="doctag">TODO:</span> issue token</span>
+  })
+);
+</code></pre>
+<h2 id="license">License</h2>
+<p><a href="http://opensource.org/licenses/MIT">The MIT License</a></p>
+<p>Copyright (c) 2015-2017 Jared Hanson <a href="[http://jaredhanson.net/](http://jaredhanson.net/)">[http://jaredhanson.net/](http://jaredhanson.net/)</a></p>
+<p><a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-fprm'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-fprm.svg' /></a></p>
+</div>

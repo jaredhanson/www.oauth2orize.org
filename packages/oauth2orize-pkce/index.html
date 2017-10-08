@@ -1,0 +1,27 @@
+<h1>oauth2orize-pkce</h1>
+
+<h2>Extensions to support Proof Key for Code Exchange with OAuth2orize.</h2>
+
+<div>
+  <h1 id="oauth2orize-pkce">oauth2orize-pkce</h1>
+<p><a href="https://www.npmjs.com/package/oauth2orize-pkce"><img src="https://img.shields.io/npm/v/oauth2orize-pkce.svg?label=version" alt="Version"></a>
+<a href="https://travis-ci.org/jaredhanson/oauth2orize-pkce"><img src="https://img.shields.io/travis/jaredhanson/oauth2orize-pkce.svg" alt="Build"></a>
+<a href="https://codeclimate.com/github/jaredhanson/oauth2orize-pkce"><img src="https://img.shields.io/codeclimate/github/jaredhanson/oauth2orize-pkce.svg?label=quality" alt="Quality"></a>
+<a href="https://coveralls.io/r/jaredhanson/oauth2orize-pkce"><img src="https://img.shields.io/coveralls/jaredhanson/oauth2orize-pkce.svg" alt="Coverage"></a>
+<a href="https://david-dm.org/jaredhanson/oauth2orize-pkce"><img src="https://img.shields.io/david/jaredhanson/oauth2orize-pkce.svg" alt="Dependencies"></a></p>
+<p><a href="https://github.com/jaredhanson/oauth2orize">OAuth2orize</a> extension providing
+support for <a href="https://tools.ietf.org/html/rfc7636">Proof Key for Code Exchange</a>.</p>
+<h2 id="install">Install</h2>
+<pre><code class="lang-bash">$ npm install oauth2orize-pkce
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h4 id="parse-request-extensions">Parse Request Extensions</h4>
+<p>In order to parse the additional parameters used to establish a proof key for
+code exchange, register support for this extension with a <code>Server</code> instance:</p>
+<pre><code class="lang-js">server.grant(<span class="built_in">require</span>(<span class="string">'oauth2orize-pkce'</span>).extensions());
+</code></pre>
+<h2 id="license">License</h2>
+<p><a href="http://opensource.org/licenses/MIT">The MIT License</a></p>
+<p>Copyright (c) 2015-2017 Jared Hanson <a href="[http://jaredhanson.net/](http://jaredhanson.net/)">[http://jaredhanson.net/](http://jaredhanson.net/)</a></p>
+<p><a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-pkce'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-pkce.svg' /></a></p>
+</div>

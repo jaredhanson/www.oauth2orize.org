@@ -1,0 +1,79 @@
+<h1>oauth2orize-acdc</h1>
+
+<h2>Extensions to support ACDC with OAuth2orize.</h2>
+
+<div>
+  <h1 id="oauth2orize-acdc">oauth2orize-acdc</h1>
+<p><a href="https://www.npmjs.com/package/oauth2orize-acdc"><img src="https://img.shields.io/npm/v/oauth2orize-acdc.svg?label=version" alt="Version"></a>
+<a href="https://travis-ci.org/jaredhanson/oauth2orize-acdc"><img src="https://img.shields.io/travis/jaredhanson/oauth2orize-acdc.svg" alt="Build"></a>
+<a href="https://codeclimate.com/github/jaredhanson/oauth2orize-acdc"><img src="https://img.shields.io/codeclimate/github/jaredhanson/oauth2orize-acdc.svg?label=quality" alt="Quality"></a>
+<a href="https://coveralls.io/r/jaredhanson/oauth2orize-acdc"><img src="https://img.shields.io/coveralls/jaredhanson/oauth2orize-acdc.svg" alt="Coverage"></a>
+<a href="https://david-dm.org/jaredhanson/oauth2orize-acdc"><img src="https://img.shields.io/david/jaredhanson/oauth2orize-acdc.svg" alt="Dependencies"></a></p>
+<p><a href="https://github.com/jaredhanson/oauth2orize">OAuth2orize</a> extensions providing
+support for <a href="https://openid.bitbucket.io/draft-acdc-01.html">Authorization Cross Domain Code</a>.</p>
+<p>ACDC provides an authorization grant that decouples authorization from access
+token issuance.  An authorization server is used to obtain authorization, which
+is represented in the form of an authorization cross domain code.  This cross
+domain code can be exchanged for an access token at an authorization server that
+exists within a separate domain (provided appropriate level of trust has been
+established).</p>
+<p>This functionality allows for a form of federation in which access tokens are
+issued by a single authoritative authorization server, while authorization (and
+consent) can be obtained from an external authorization server.  Such a
+deployment model is particularly relevant to SaaS providers that offer business
+solutions.</p>
+<h2 id="install">Install</h2>
+<pre><code class="lang-bash">$ npm install oauth2orize-acdc
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h4 id="register-extensions">Register Extensions</h4>
+<p>ACDC depends on audience indicators and PKCE.  These extensions must be
+registered independently by requiring <a href="https://github.com/jaredhanson/oauth2orize-audience">oauth2orize-audience</a>
+and <a href="https://github.com/jaredhanson/oauth2orize-pkce">oauth2orize-pkce</a>:</p>
+<pre><code class="lang-js">server.grant(<span class="built_in">require</span>(<span class="string">'oauth2orize-audience'</span>).extensions());
+server.grant(<span class="built_in">require</span>(<span class="string">'oauth2orize-pkce'</span>).extensions());
+</code></pre>
+<h4 id="register-acdc-grant">Register ACDC Grant</h4>
+<p>A client will request an ACDC grant by setting <code>response_type</code> to <code>acdc</code> in an
+authorization request.  In order to issue such a grant, register the grant with
+a <code>Server</code> instance, and implement the <code>issue</code> callback:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> acdc = <span class="built_in">require</span>(<span class="string">'oauth2orize-acdc'</span>);
+
+server.grant(acdc.grant.acdc(<span class="function"><span class="keyword">function</span>(<span class="params">client, user, audience, pkce, cb</span>) </span>{
+  <span class="comment">// <span class="doctag">TODO:</span> Issue an ACDC code in JWT format.</span>
+  <span class="keyword">var</span> code = issueACDCCode(...);
+  <span class="keyword">return</span> cb(<span class="literal">null</span>, code);
+}));
+</code></pre>
+<h4 id="register-acdc-exchange">Register ACDC Exchange</h4>
+<p>Once a client has obtained an ACDC code, it can be exchanged for an access
+token.  In order to issue the access token, register the exchange with a
+<code>Server</code> instance and implement the <code>issue</code> callback:</p>
+<pre><code class="lang-js"><span class="keyword">var</span> acdc = <span class="built_in">require</span>(<span class="string">'oauth2orize-acdc'</span>);
+
+server.exchange(<span class="string">'urn:ietf:params:oauth:grant-type:jwt-acdc'</span>, acdc.exchange.jwtACDC(<span class="function"><span class="keyword">function</span>(<span class="params">client, code, verifier, cb</span>) </span>{
+  <span class="comment">// <span class="doctag">TODO:</span></span>
+  <span class="comment">// 1. Verify the ACDC code, ensuring that it was issued by an authorization</span>
+  <span class="comment">//    server with which a trust relationship has been established.</span>
+  <span class="comment">// 2. Verify that the ACDC code is being exchanged by the client to which it</span>
+  <span class="comment">//    was issued, by means of PKCE.</span>
+  <span class="comment">// 3. Issue an access token with the scope granted during the authorization</span>
+  <span class="comment">//    request.</span>
+  <span class="keyword">var</span> token = issueAccessToken(...);
+  <span class="keyword">return</span> cb(<span class="literal">null</span>, token);
+}));
+</code></pre>
+<h2 id="considerations">Considerations</h2>
+<h4 id="specification">Specification</h4>
+<p>This module is implemented based on a draft of <a href="https://openid.bitbucket.io/draft-acdc-01.html">Authorization Cross Domain Code 1.0</a>.
+As a draft, the specification remains a work-in-progress and is <em>not</em> final.
+The specification is under discussion within the <a href="http://openid.net/wg/napps/">Native Applications</a>
+working group of <a href="http://openid.net/">OpenID Foundation</a>.  Implementers are
+encouraged to track the progress of this specification and update
+implementations as necessary.  Furthermore, the implications of relying on
+non-final specifications should be understood prior to deployment.</p>
+<h2 id="license">License</h2>
+<p><a href="http://opensource.org/licenses/MIT">The MIT License</a></p>
+<p>Copyright (c) 2016-2017 Jared Hanson <a href="[http://jaredhanson.net/](http://jaredhanson.net/)">[http://jaredhanson.net/](http://jaredhanson.net/)</a></p>
+<p><a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-acdc'>  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/vK9dyjRnnWsMzzJTQ57fRJpH/jaredhanson/oauth2orize-acdc.svg' /></a></p>
+</div>
