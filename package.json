@@ -9,6 +9,7 @@
     "node": "6.10.3"
   },
   "dependencies": {
-    "ejs": "^2.5.7"
+    "ejs": "^2.5.7",
+    "kerouac-cname": "^0.2.0"
   }
 }
