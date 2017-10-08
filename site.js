@@ -5,6 +5,8 @@ site.set('base url', 'http://www.oauth2orize.org');
 
 site.engine('ejs', require('ejs'));
 
+site.use('/packages', require('kerouac-npm-packages')());
+
 site.content('content');
 
 site.page('/CNAME', require('kerouac-cname')());
