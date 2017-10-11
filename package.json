@@ -10,6 +10,9 @@
   },
   "dependencies": {
     "ejs": "^2.5.7",
-    "kerouac-cname": "^0.2.0"
+    "kerouac": "^0.1.0",
+    "kerouac-cname": "^0.2.0",
+    "kerouac-robotstxt": "^0.4.0",
+    "kerouac-sitemap": "^0.4.0"
   }
 }
