@@ -8,16 +8,16 @@ timeline while restricting this permission from other applications.
 
 The permissions a user grants to each application are recorded, allowing them to
 be modified or revoked later.  For example, if a user discovers that an
-application is posting unwanted mnessages, that permission can be revoked,
+application is posting unwanted messages, that permission can be revoked,
 preventing the application from doing so in the future.  If a user loses her
-phone, access to all applications installed on that device can be revoked, while
+phone, access to applications installed on that device can be revoked, while
 applications on other devices continue to operate normally.
 
 OAuth 2.0 [specifies](https://tools.ietf.org/html/rfc6749) a flexible and
 extensible protocol, which provides a variety of mechanisms by which an
 application can obtain access.  This flexibility allows OAuth to be used in
-almost any scenario.  However, it is often a cause of confusion, because it is
-not always clear what mechanisms are appropriate in what situations.
+almost any scenario.  However, it is often also a source of confusion, because
+it is not always clear what mechanisms are appropriate in what situations.
 
 Implementing OAuth properly allows services to enhance security, while giving
 users more control over their privacy and the applications they use to access
