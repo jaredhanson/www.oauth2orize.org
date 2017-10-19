@@ -24,6 +24,8 @@ users more control over their privacy and the applications they use to access
 online services.  However, if not understood and implemented improperly, OAuth
 can be a vector for security exploits.
 
-This guide seeks to clarify some of the confusion surrounding OAuth, while
-illustrating how to build an OAuth 2.0 authorization server using OAuth2orize
-and [Node.js](https://nodejs.org/).
+This guide illustrates how to build an OAuth 2.0 authorization server using
+OAuth2orize and [Node.js](https://nodejs.org/).  Along the way, practical advice
+regarding OAuth 2.0 and implmentation will be provided, helping to explain how
+and why OAuth works the way it does, while dispelling with common sources of
+confusion.
