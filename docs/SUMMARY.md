@@ -2,4 +2,8 @@
 
 * [Introduction](README.md)
 * [Protocol](protocol.md)
-* [Authorization Code](ua/authorization-code.md)
+
+### User Agent
+
+* [Authorization Code](user-agent/authorization-code.md)
+* [Implicit](user-agent/implicit.md)
