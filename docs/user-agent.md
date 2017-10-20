@@ -18,3 +18,8 @@ will prompt the user to authenticate (if not already logged in) and obtain the
 user's consent for the permissions the application is requesting.  These prompts
 interleve a series of HTTP requests to and from the users browser, _between_ the
 authorization request and response.
+
+When the user interacts with the prompts, the interaction is occuring directly
+between the user and the authorization server.  This has a number of important
+security benefits, with a primary one being that the user's password is never
+given to the client.
