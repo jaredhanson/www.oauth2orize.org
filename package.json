@@ -2,17 +2,28 @@
   "name": "www.oauth2orize.org",
   "version": "0.0.0",
   "private": true,
-  "devDependencies": {
-    "node-sass": "^4.5.3"
-  },
-  "engines": {
-    "node": "6.10.3"
+  "author": {
+    "name": "Jared Hanson",
+    "email": "jaredhanson@gmail.com",
+    "url": "http://www.jaredhanson.net/"
   },
   "dependencies": {
+    "bixby": "^0.1.6",
+    "bixby-common": "^0.1.3",
+    "bixby-express": "^0.1.7",
+    "bixby-http": "^0.1.5",
+    "express": "^4.16.2",
+    "express-static": "^1.2.5"
+  },
+  "devDependencies": {
     "ejs": "^2.5.7",
     "kerouac": "^0.1.0",
     "kerouac-cname": "^0.2.0",
     "kerouac-robotstxt": "^0.4.0",
-    "kerouac-sitemap": "^0.4.0"
+    "kerouac-sitemap": "^0.4.0",
+    "node-sass": "^4.5.3"
+  },
+  "engines": {
+    "node": "6.10.3"
   }
 }
