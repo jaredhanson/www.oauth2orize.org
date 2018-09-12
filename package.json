@@ -8,6 +8,7 @@
     "url": "http://www.jaredhanson.net/"
   },
   "dependencies": {
+    "@kerouac/main": "0",
     "bixby": "^0.1.6",
     "bixby-common": "^0.1.3",
     "bixby-express": "^0.1.7",
