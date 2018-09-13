@@ -8,7 +8,10 @@
     "url": "http://www.jaredhanson.net/"
   },
   "dependencies": {
+    "@kerouac/cname": "0.0.2",
     "@kerouac/main": "0",
+    "@kerouac/robots": "0.0.1",
+    "@kerouac/sitemap": "0.0.1",
     "bixby": "^0.1.6",
     "bixby-common": "^0.1.3",
     "bixby-express": "^0.1.7",
