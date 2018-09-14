@@ -1,4 +1,4 @@
-exports = module.exports = function(sitemap, robots, cname) {
+exports = module.exports = function(packages, sitemap, robots, cname) {
   var kerouac = require('kerouac');
   
   
@@ -8,7 +8,8 @@ exports = module.exports = function(sitemap, robots, cname) {
 
   site.engine('ejs', require('ejs'));
 
-  site.use('/packages', require('kerouac-npm-packages')());
+  //site.use('/packages', require('kerouac-npm-packages')());
+  site.use('/packages', packages);
 
   site.content('content');
 
@@ -25,6 +26,7 @@ exports = module.exports = function(sitemap, robots, cname) {
 };
 
 exports['@require'] = [
+  'http://io.modulate/comp/lang/javascript/packages/WWWSite',
   'http://i.kerouacjs.org/www/sitemap/Site',
   'http://i.kerouacjs.org/www/robots/Site',
   'http://i.kerouacjs.org/dns/cname/Site'
