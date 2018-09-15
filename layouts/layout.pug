@@ -1,0 +1,14 @@
+doctype html
+html(prefix='og: http://ogp.me/ns#', lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    if description
+      meta(name='description', content=description)
+    if author && author.name
+      meta(name='author', text=author.name)
+    link(rel='canonical', href=canonicalURL)
+
+  body
+    #content
+      block content
