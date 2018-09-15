@@ -18,7 +18,8 @@
     "bixby-http": "^0.1.5",
     "kerouac-npm-packages": "0",
     "express": "^4.16.2",
-    "express-static": "^1.2.5"
+    "express-static": "^1.2.5",
+    "pug": "^2.0.0-rc.4"
   },
   "devDependencies": {
     "ejs": "^2.5.7",
