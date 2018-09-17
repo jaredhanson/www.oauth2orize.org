@@ -1,0 +1,26 @@
+$font-stack:    "Helvetica Neue", Helvetica, sans-serif;
+$primary-color: #555;
+$color-primary: #9b4dca !default
+$color-secondary: #606c76 !default
+
+@import "normalize.css/normalize";
+@import "base";
+
+
+
+
+
+.main {
+}
+
+
+.hentry {
+  width: 800px;
+  border: 1px solid red;
+  margin: 0 auto 100px;
+}
+
+@import "util";
+@import "navigation";
+
+

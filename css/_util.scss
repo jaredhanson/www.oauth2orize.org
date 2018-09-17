@@ -1,0 +1,12 @@
+/* Include in order to clear fix
+ *
+ * Defined as a mixin in order to avoid non-semantic CSS
+ */
+
+@mixin clearfix {
+  &::after {
+    clear: both;
+    display: block;
+    content: " ";
+  }
+}
