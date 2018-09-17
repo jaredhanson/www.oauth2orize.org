@@ -1,5 +1,6 @@
 ## Access Token
-A string denoting access attributes such as scope and expiration.
+A credential used to access protected resources.  The credential denotes access
+attributes such as scope and expiration.
 
 ## Authorization
 
