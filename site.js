@@ -1,3 +1,6 @@
+require('bixby')(undefined, 'org.kerouacjs/main');
+
+/*
 var kerouac = require('kerouac');
 var site = kerouac();
 
@@ -24,3 +27,4 @@ site.generate(function(err) {
     return;
   }
 });
+*/
