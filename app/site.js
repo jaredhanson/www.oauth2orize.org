@@ -21,7 +21,7 @@ exports = module.exports = function(packages, sitemap, robots, cname) {
 };
 
 exports['@require'] = [
-  'http://schemas.modulate.io/js/comp/lang/javascript/packages/WWWSite',
+  'http://schemas.modulate.io/js/comp/lang/javascript/packages/registry/WWWSite',
   'http://i.kerouacjs.org/www/sitemap/Site',
   'http://i.kerouacjs.org/www/robots/Site',
   'http://i.kerouacjs.org/dns/cname/Site'
