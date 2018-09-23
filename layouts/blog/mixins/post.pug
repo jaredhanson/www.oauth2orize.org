@@ -1,0 +1,9 @@
+mixin blog-post(post)
+  article.hentry
+    h1.entry-title= post.title
+    div
+      span.author
+        span.fn Jared
+      abbr(class='published', title=post.publishedAt.toISOString().substring(0,19)+'Z') #{createdAt}
+    .entry-content
+      |!{ content }

@@ -1,0 +1,12 @@
+extends ../layout
+
+include mixins/post
+
+block content
+  h1 'Blog Feed'
+  |!{ content }
+
+
+  .hfeed
+    each post in posts
+      +blog-post(post)

@@ -22,6 +22,7 @@
     "@kerouac/sitemap": "0.0.2",
     "@modulate/developer": "github:modulate/nodex-developer",
     "kerouac": "^0.1.0",
+    "kerouac-blog": "^0.1.0",
     "kerouac-npm-packages": "github:jaredhanson/kerouac-npm-packages",
     "node-sass": "^4.5.3",
     "pug": "^2.0.0-rc.4"
