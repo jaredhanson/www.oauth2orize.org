@@ -22,9 +22,9 @@ exports = module.exports = function(packages, blog, sitemap, robots, cname) {
 };
 
 exports['@require'] = [
-  'http://schemas.modulate.io/js/comp/lang/javascript/packages/registry/WWWSite',
+  'io.modulate/comp/lang/javascript/packages/registry/www/site',
   'http://i.kerouacjs.org/blog/Site',
-  'http://i.kerouacjs.org/www/sitemap/Site',
-  'http://i.kerouacjs.org/www/robots/Site',
+  'org.kerouacjs/sitemap/protocol',
+  'org.kerouacjs/robots/protocol',
   'http://i.kerouacjs.org/dns/cname/Site'
 ];
