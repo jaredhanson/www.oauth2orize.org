@@ -3,10 +3,10 @@ extends ../layout
 include mixins/post
 
 block content
-  h1 'Blog Feed'
-  |!{ content }
-
-
   .hfeed
     each post in posts
-      +blog-post(post)
+      article.hentry
+        h1
+          a(rel='bookmark', href=post.absoluteURL)= post.title
+        .entry-content
+          |!{ post.content }
