@@ -12,16 +12,16 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
     link(rel='canonical', href=canonicalURL)
 
   body
-    header
-      nav.navbar
-        section.navbar-section
-          a(href='/').navbar-brand.mr-2 OAuth2orize
-          a(href='/news').btn.btn-link News
-        section.navbar-section
-          form(action='/search')
-            .has-icon-left
-              span.form-icon.icon.icon-search
-              input(type='text', name='q', placeholder='Search').form-input
+    header.navbar
+      section.navbar-section
+        a(href='/').navbar-brand.mr-2 OAuth2orize
+        a(href='/docs/').btn.btn-link Docs
+        a(href='/news/').btn.btn-link News
+      section.navbar-section
+        form(action='/search')
+          .has-icon-left
+            span.form-icon.icon.icon-search
+            input(type='text', name='q', placeholder='Search').form-input
   
     #container
       block content
