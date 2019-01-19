@@ -16,8 +16,8 @@
     "express-static": "^1.2.5"
   },
   "devDependencies": {
-    "@kerouac/main": "0",
     "@kerouac/cname": "0.0.2",
+    "@kerouac/main": "0",
     "@kerouac/robots": "0.0.2",
     "@kerouac/sitemap": "0.0.2",
     "@modulate/developer": "github:modulate/nodex-developer",
@@ -25,7 +25,8 @@
     "kerouac-blog": "^0.1.0",
     "kerouac-npm-packages": "github:jaredhanson/kerouac-npm-packages",
     "node-sass": "^4.5.3",
-    "pug": "^2.0.0-rc.4"
+    "pug": "^2.0.0-rc.4",
+    "spectre.css": "^0.5.8"
   },
   "engines": {
     "node": "6.10.3"
