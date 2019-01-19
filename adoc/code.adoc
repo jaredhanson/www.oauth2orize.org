@@ -1,3 +1,0 @@
-"http://asciidoctor.org[*Asciidoctor*] running on http://opalrb.org[_Opal_] brings AsciiDoc to Node.js!
-
-Hello, _Asciidoctor_
