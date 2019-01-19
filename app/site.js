@@ -1,4 +1,4 @@
-exports = module.exports = function(packages, blog, sitemap, robots, cname) {
+exports = module.exports = function(packageRegistry, blog, sitemapProtocol, robotsProtocol, cname) {
   var kerouac = require('kerouac');
   
   
@@ -10,12 +10,12 @@ exports = module.exports = function(packages, blog, sitemap, robots, cname) {
   site.locals.pretty = true;
 
   site.use('/news', blog);
-  //site.use('/packages', packages);
+  //site.use('/packages', packageRegistry);
 
   site.content('content');
 
-  site.use(sitemap);
-  site.use(robots);
+  site.use(sitemapProtocol);
+  site.use(robotsProtocol);
   site.use(cname);
   
   return site;
