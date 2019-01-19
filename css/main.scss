@@ -1,3 +1,40 @@
 @import "node_modules/spectre.css/src/spectre";
+@import "node_modules/spectre.css/src/spectre-icons";
 
-.column li { list-style: none; color: red; margin-top: 0; margin-bottom: 0; }
+
+#footer {
+  background-color: $gray-color-light;
+}
+
+#footer ul {
+  list-style: none;
+}
+
+#footer .social {
+  
+  a {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.68);
+    text-decoration: none;
+  }
+  
+  // https://brandcolors.net/b/facebook
+  a[href^="https://www.facebook.com"]:hover {
+    color: #3b5998;
+  }
+  
+  // https://brandcolors.net/b/twitter
+  a[href^="https://twitter.com"]:hover {
+    color: #1da1f2;
+  }
+  
+  a span {
+    display: none;
+  }
+  
+  li {
+    display: inline-block;
+    padding-right: .5em;
+  }
+  
+}

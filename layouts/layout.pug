@@ -10,10 +10,11 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
     link(rel='x-stylesheet', href='https://unpkg.com/spectre.css/dist/spectre.min.css')
     link(rel='x-stylesheet', href='https://unpkg.com/spectre.css/dist/spectre-icons.min.css')
     link(rel='stylesheet', href='/stylesheet.css')
+    link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.6.3/css/all.css', integrity='sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/', crossorigin='anonymous')
     link(rel='canonical', href=canonicalURL)
 
   body
-    header.navbar
+    header.navbar.container.grid-lg
       section.navbar-section
         a(href='/').navbar-brand.mr-2 OAuth2orize
         a(href='/docs/').btn.btn-link Docs
@@ -24,15 +25,56 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
             span.form-icon.icon.icon-search
             input(type='text', name='q', placeholder='Search').form-input
   
-    #container
+    div
       block content
       
-    footer
-      .columns
-        .column
-          ul
+    footer#footer
+      .container.grid-lg
+        .columns
+          .column.col-3
             h5 News
-            li
-              a(href='/news/archives') Archives
-            li
-              a(href='/news/tags') Tags
+            ul
+              li
+                a(href='/news/archives') Archives
+              li
+                a(href='/news/tags') Tags
+          .column.col-3
+            h5 Sponsor
+            ul
+              li
+                a(href='/news/archives') Patreon
+              li
+                a(href='/news/tags') Tags
+          .social.column.col-6
+            h5 Social
+            ul
+              li
+                a.fab.fa-facebook(href='https://www.facebook.com/jaredhanson')
+                  span Facebook
+              li
+                a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
+                  span Twitter
+              li
+                a.fab.fa-facebook(href='https://www.facebook.com/jaredhanson')
+                  span Facebook
+              li
+                a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
+                  span Twitter
+              li
+                a.fab.fa-facebook(href='https://www.facebook.com/jaredhanson')
+                  span Facebook
+              li
+                a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
+                  span Twitter
+              li
+                a.fab.fa-facebook(href='https://www.facebook.com/jaredhanson')
+                  span Facebook
+              li
+                a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
+                  span Twitter
+              li
+                a.fab.fa-facebook(href='https://www.facebook.com/jaredhanson')
+                  span Facebook
+              li
+                a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
+                  span Twitter
