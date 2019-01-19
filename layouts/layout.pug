@@ -8,6 +8,7 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
     if author && author.name
       meta(name='author', text=author.name)
     link(rel='stylesheet', href='https://unpkg.com/spectre.css/dist/spectre.min.css')
+    link(rel='stylesheet', href='https://unpkg.com/spectre.css/dist/spectre-icons.min.css')
     link(rel='canonical', href=canonicalURL)
 
   body
@@ -17,8 +18,10 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
           a(href='/').navbar-brand.mr-2 OAuth2orize
           a(href='/news').btn.btn-link News
         section.navbar-section
-          a(href='/').navbar-brand.mr-2 OAuth2orize
-          a(href='/docs').btn.btn-link Docs
+          form(action='/search')
+            .has-icon-left
+              span.form-icon.icon.icon-search
+              input(type='text', name='q', placeholder='Search').form-input
   
     #container
       block content
