@@ -25,17 +25,34 @@ $primary-color: #194c72;
 
 #footer {
   background-color: $gray-color-light;
-}
-
-#footer ul {
-  list-style: none;
+  color: $dark-color;
+  padding-top: 10px;
+  
+  h5 {
+    font-size: .7rem;
+    margin-bottom: .2em;
+  }
+  
+  a {
+    color: $gray-color-dark;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+  }
+  
+  li {
+    font-size: .6rem;
+    margin: 0;
+  }
 }
 
 #footer .social {
   
   a {
     font-size: 1rem;
-    color: rgba(0, 0, 0, 0.68);
+    color: $dark-color;
     text-decoration: none;
   }
   
@@ -63,4 +80,9 @@ $primary-color: #194c72;
     padding-right: .5em;
   }
   
+}
+
+#footer .legal {
+  color: $gray-color;
+  font-size: .6rem;
 }
