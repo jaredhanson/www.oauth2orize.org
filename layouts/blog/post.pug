@@ -2,10 +2,11 @@ extends ../layout
 
 
 block content
-  article.hentry
-    h1.entry-title
-      a(rel='bookmark', href=absoluteURL)= title
-    p.metadata
-      time.published(datetime=publishedAt.toISOString())= publishedMoment.format('dddd, MMMM D, YYYY')
-    .entry-content
-      |!{ content }
+  .container.grid-lg
+    article.hentry
+      h1.entry-title
+        a(rel='bookmark', href=absoluteURL)= title
+      p.metadata
+        time.published(datetime=publishedAt.toISOString())= publishedMoment.format('dddd, MMMM D, YYYY')
+      .entry-content
+        |!{ content }

@@ -14,16 +14,17 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
     link(rel='canonical', href=canonicalURL)
 
   body
-    header.navbar.container.grid-lg
-      section.navbar-section
-        a(href='/').navbar-brand.mr-2 OAuth2orize
-        a(href='/docs/').btn.btn-link Docs
-        a(href='/news/').btn.btn-link News
-      section.navbar-section
-        form(action='/search')
-          .has-icon-left
-            span.form-icon.icon.icon-search
-            input(type='text', name='q', placeholder='Search').form-input
+    header#header
+      .navbar.container.grid-lg
+        section.navbar-section
+          a(href='/').navbar-brand.mr-2 OAuth2orize
+          a(href='/docs/').btn.btn-link Docs
+          a(href='/news/').btn.btn-link News
+        section.navbar-section
+          form(action='/search')
+            .has-icon-left
+              span.form-icon.icon.icon-search
+              input(type='text', name='q', placeholder='Search').form-input
   
     div
       block content
@@ -39,19 +40,32 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
               li
                 a(href='/news/tags') Tags
           .column.col-3
+            h5 Community
+            ul
+              li
+                a(href='/news/archives') Stack Overflow
+              li
+                a(href='/news/tags') Tags
+          .column.col-3
             h5 Sponsor
             ul
               li
                 a(href='/news/archives') Patreon
               li
                 a(href='/news/tags') Tags
-          .social.column.col-6
+          .social.column.col-3
             h5 Social
             ul
               li
                 a.fab.fa-facebook(href='https://www.facebook.com/jaredhanson')
                   span Facebook
               li
+                a.fab.fa-twitter(href='https://twitter.com/oauth2orize')
+                  span Twitter
+              li
+                a.fab.fa-github(href='https://github.com/jaredhanson/oauth2orize')
+                  span GitHub
+              li
                 a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
                   span Twitter
               li
@@ -72,9 +86,10 @@ html(prefix='og: http://ogp.me/ns#', lang='en')
               li
                 a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
                   span Twitter
-              li
-                a.fab.fa-facebook(href='https://www.facebook.com/jaredhanson')
-                  span Facebook
-              li
-                a.fab.fa-twitter(href='https://twitter.com/jaredhanson')
-                  span Twitter
+      .navbar.container.grid-lg
+        .navbar-section
+          span Copyright &copy; 2019 Jared Hanson. All rights reserved.
+        .navbar-section
+          span.fas.fa-peace
+          span.fas.fa-heart
+          span.fas.fa-code

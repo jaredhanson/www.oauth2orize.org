@@ -1,6 +1,27 @@
+$primary-color: #194c72;
+
 @import "node_modules/spectre.css/src/spectre";
 @import "node_modules/spectre.css/src/spectre-icons";
 
+//194c72
+// https://www.onepixel.com/en/photo/digital-target-over-computing-matrix-1584576?src=43175e6a63ed9e2f737a4e647ee02010-3
+// https://www.onepixel.com/en/photo/pink-technology-hand-print-authorization-1592787?src=43175e6a63ed9e2f737a4e647ee02010-3
+
+// f28019 // orange
+// 1c77c3 // blue
+// d63230 // red
+// e9ce2c // yellow
+// 50514f // black
+
+
+#hero {
+  color: white;
+  background-image: url('https://images.onepixel.com/2e179cdf-277c-611c-f4ee-9db5bb7a936e_1000.jpg?auto=format&q=80&mark=watermark%2F1000px-v5.png&markalign=center%2Cmiddle&h=1000&w=1000&txt=%231584576&txtclr=fff&txtsize=12&txtfont=sans-serif&txtalign=right%2Cbottom&txtpad=10&txtshad=5&s=cd9d3d6ed62f13499e5b159cfc5563a4');
+}
+
+#header {
+  padding: 13px 0;
+}
 
 #footer {
   background-color: $gray-color-light;
@@ -21,6 +42,11 @@
   // https://brandcolors.net/b/facebook
   a[href^="https://www.facebook.com"]:hover {
     color: #3b5998;
+  }
+  
+  // https://brandcolors.net/b/github
+  a[href^="https://github.com"]:hover {
+    color: #333;
   }
   
   // https://brandcolors.net/b/twitter
