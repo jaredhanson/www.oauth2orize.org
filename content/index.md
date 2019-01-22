@@ -1,4 +1,5 @@
 ---
+layout: 'home'
 title: 'Hello'
 author:
   name: "Jared Hanson"
