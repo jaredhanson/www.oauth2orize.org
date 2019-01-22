@@ -10,7 +10,7 @@ exports = module.exports = function(packageRegistry, blog, sitemapProtocol, robo
   site.locals.pretty = true;
 
   site.use('/news', blog);
-  //site.use('/packages', packageRegistry);
+  site.use('/packages', packageRegistry);
 
   site.content('content');
 
