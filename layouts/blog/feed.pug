@@ -3,10 +3,11 @@ extends ../layout
 include mixins/post
 
 block content
-  .hfeed
-    each post in posts
-      article.hentry
-        h1
-          a(rel='bookmark', href=post.absoluteURL)= post.title
-        .entry-content
-          |!{ post.content }
+  .container.grid-lg
+    .hfeed
+      each post in posts
+        article.hentry
+          h1
+            a(rel='bookmark', href=post.absoluteURL)= post.title
+          .entry-content
+            |!{ post.content }
