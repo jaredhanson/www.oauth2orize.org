@@ -20,7 +20,13 @@ $primary-color: #194c72;
 }
 
 #header {
+  border-bottom: 1px solid $gray-color;
   padding: 13px 0;
+  
+  .navbar-brand {
+    x-text-transform: uppercase;
+    font-weight: bold;
+  }
 }
 
 #footer {
