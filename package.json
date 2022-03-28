@@ -7,15 +7,17 @@
     "email": "jaredhanson@gmail.com",
     "url": "http://www.jaredhanson.net/"
   },
+  "scripts": {
+    "start": "node ./bin/www"
+  },
   "dependencies": {
-    "bixby": "^0.2.1",
-    "bixby-common": "^0.1.3",
-    "bixby-express": "^0.2.0",
-    "bixby-http": "^0.2.0",
-    "express": "^4.16.2",
-    "express-static": "^1.2.5"
+    "express": "^4.17.3"
   },
   "devDependencies": {
+    "pug": "^3.0.2",
+    "tailwindcss": "^3.0.23"
+  },
+  "x_devDependencies": {
     "@kerouac/cname": "0.0.2",
     "@kerouac/main": "0",
     "@kerouac/robots": "0.0.2",
