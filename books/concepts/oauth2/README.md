@@ -19,4 +19,4 @@ encompasses numerous features that are open to extensibility, with specific
 implementation details left to the application developer.   This guide focuses
 on the fundamental and most commonly used aspects of OAuth 2.0.  By reading this
 guide, you will gain an understanding of how OAuth 2.0 works, and how to use
-OAuth2orize to build an OAuth 2.0 server.
+OAuth2orize to build a functional OAuth 2.0 server.
