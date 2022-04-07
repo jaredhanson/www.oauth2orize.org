@@ -46,3 +46,9 @@ unnecessary permissions such as making transfers.  The permitted scope is
 captured in the Budgetify's application-specific access token, addressing the
 overly broad access that would otherwise have been allowed if Alice were to have
 shared her password.
+
+In OAuth 2.0, applications such as Budgetify are referred to as _clients_.  APIs
+such as Alpha Bank's API are referred to as _resource servers_.  Throughout this
+guide, the words "application" and "API" will be used, since they are more
+natural language.  Keep in mind that you will encounter the more formal terms as
+you learn more about OAuth 2.0 and read documentation elsewhere.
