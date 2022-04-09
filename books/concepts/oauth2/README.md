@@ -10,8 +10,8 @@ OAuth2orize is a toolkit for building OAuth 2.0 servers.  OAuth2orize provides
 [Express](https://expressjs.com/) middleware used to implement OAuth 2.0
 endpoints.  These endpoints allow applications to request authorization and
 obtain tokens.  Additionally, OAuth2orize provides a pluggable suite of grants
-and exchanges which correspond to the extensible set of mechanisms defined by
-the OAuth 2.0 framework for obtaining authorization and issuing tokens.
+and exchanges which correspond to the extensible set of authorization grants
+defined by OAuth 2.0.
 
 This guide provides an overview of OAuth 2.0.  As a framework, OAuth 2.0 is
 highly extensible with many optional components, leaving numerous implementation

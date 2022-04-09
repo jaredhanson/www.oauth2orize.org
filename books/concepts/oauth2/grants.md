@@ -1,0 +1,34 @@
+# Authorization Grants
+
+OAuth 2.0 defines a set of _authorization grants_ which represent the user's
+consent to allow an application to access the user's data and information.
+OAuth 2.0 specifies four types of authorization grants: [authorization code](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.1),
+[implicit](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.2),
+[password](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.3), and
+[client credentials](https://datatracker.ietf.org/doc/html/rfc6749#section-1.3.4).
+
+Each grant type uses one or both of the authorization endpoint and token
+endpoint.
+
+| Grant Type         | Authorization Endpoint | Token Endpoint |
+| ------------------ | ---------------------- | -------------- |
+| Authorization Code | &check;                | &check;        |
+| Implicit           | &check;                |                |
+| Password           |                        | &check;        |
+| Client Credentials |                        | &check;        |
+
+Grant types that do not use the authorization endpoint require applications to
+handle user credentials, such as a password, directly.  While this may be
+appropriate in certain scenarios, it diminishes the security benefits of using
+OAuth, especially when authorizing third-party applications.
+
+Grant types making use of the authorization endpoint send authorization requests
+to the OAuth 2.0 server by redirecting the user's browser to this endpoint.  The
+server, rather than the application, is then handling user credentials as well
+as obtaining consent.  In other words, the server is an intermediary between the
+user and the application.
+
+Using the server as an intermediary is the preferred method for obtaining
+authorization, as it takes full advantage of the security benefits offered by
+OAuth.  As such, this guide focuses on the authorization code and implict
+grants, leaving other types for further reading.

@@ -11,7 +11,7 @@ services.
 Budgetify is one of those third-party services, which helps customers like Alice
 manage spending and savings.  By integrating with Alpha Bank's API, Budgetify is
 able to automatically analyze transactions, providing Alice with intelligent
-recommendations on how to reduce or eliminate recurring expenses.
+recommendations on how to reduce or eliminate expenses.
 
 Before OAuth, this integration would require Alice to hand over her username and
 password to Budgetify.  Since Alice has been rightfully warned to never share
@@ -26,7 +26,7 @@ only for the purpose of reading transactions, and not to transfer money.  The
 list of concerns only grows from here.  Clearly, this security model leaves a
 lot to be desired.
 
-OAuth addresses these problems by issuing Budgetify an application-specific
+OAuth 2.0 addresses these problems by issuing Budgetify an application-specific
 credential, known as an _access token_, rather than requiring Budgetify to use
 a user credential such as a password.  Budgetify obtains an access token by
 making an authorization request to Alpha Bank.  This authorization request is
@@ -43,12 +43,13 @@ has to share her password with Budgetify.  When giving her consent, Alice can
 also indicate what _scope_ of access Budgetify is allowed.  In this instance,
 Budgetify's access can be restricted to only reading transactions, excluding
 unnecessary permissions such as making transfers.  The permitted scope is
-captured in the Budgetify's application-specific access token, addressing the
+captured in the Budgetify's application-specific access token, avoiding the
 overly broad access that would otherwise have been allowed if Alice were to have
 shared her password.
 
-In OAuth 2.0, applications such as Budgetify are referred to as _clients_.  APIs
-such as Alpha Bank's API are referred to as _resource servers_.  Throughout this
-guide, the words "application" and "API" will be used, since they are more
-natural language.  Keep in mind that you will encounter the more formal terms as
-you learn more about OAuth 2.0 and read documentation elsewhere.
+In OAuth 2.0, applications such as Budgetify are referred to as _clients_,  APIs
+such as Alpha Bank's API are referred to as _resource servers_, and users such
+as Alice are referred to as _resource owners_.  Throughout this guide, the words
+"application", "API", and "user" will be used, since they are more natural
+language.  Keep in mind that you will encounter the more formal terms as you
+learn more about OAuth 2.0 and read documentation elsewhere.
