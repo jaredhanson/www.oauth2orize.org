@@ -18,17 +18,42 @@ endpoint.
 | Client Credentials |                        | &check;        |
 
 Grant types that do not use the authorization endpoint require applications to
-handle user credentials, such as a password, directly.  While this may be
-appropriate in certain scenarios, it diminishes the security benefits of using
-OAuth, especially when authorizing third-party applications.
+handle user credentials directly.  For instance, the user's consent to grant
+access is inferred from the act of the user handing over their password to an
+application.  While this may be appropriate in certain scenarios, it diminishes
+the security benefits of using OAuth, especially when authorizing third-party
+applications, and fails to fully inform the user of the consequence of thier
+action.
 
-Grant types making use of the authorization endpoint send authorization requests
-to the OAuth 2.0 server by redirecting the user's browser to this endpoint.  The
-server, rather than the application, is then handling user credentials as well
-as obtaining consent.  In other words, the server is an intermediary between the
-user and the application.
+Grant types making use of the authorization endpoint are obtained by sending
+authorization requests to the OAuth 2.0 server via redirecting the user's
+browser to this endpoint.  The server, rather than the application, is then
+handling user credentials as well as obtaining consent, which can be fully
+informed.  In other words, the server is an intermediary between the user and
+the application.
 
 Using the server as an intermediary is the preferred method for obtaining
 authorization, as it takes full advantage of the security benefits offered by
 OAuth.  As such, this guide focuses on the authorization code and implict
 grants, leaving other types for further reading.
+
+For grant types that use the authorization endpoint, the grant is returned to
+the application through a grant plugin supplied by OAuth2orize.  For example,
+registering a plugin to issue an authorization code to the application:
+
+```
+as.grant(oauth2orize.grant.code(function issue(client, redirectURI, user, authz, cb) {
+  // ...
+}));
+```
+
+Similarly, for grant types that use the token endpoint, the grant is exchanged
+for an access token through an exchange plugin supplied by OAuth2orize.  For
+example, registering a plugin to exchange an authorization code for an access
+token:
+
+```
+as.exchange(oauth2orize.exchange.code(function issue(client, code, redirectURI, cb) {
+  // ...
+}));
+```

@@ -20,7 +20,7 @@ these endpoints.
 var as = oauth2orize.createServer();
 
 app.get('/authorize',
-  server.authorize(validate, authorize),
+  as.authorize(validate, authorize),
   function interact(req, res) {
     // ...
   });
