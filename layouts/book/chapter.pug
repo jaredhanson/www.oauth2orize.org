@@ -1,15 +1,15 @@
 extends ../layout
 
 block content
-  nav
-    each part in summary.parts
-      a(href=filters.resolveFile(part.articles[0].path))
-      | #{part.title}
-      ul
-        each article in part.articles
-          li
-            a(href=filters.resolveFile(article.path), class=(article.path == file.path ? 'active' : '')) #{article.title}
+  div(class='max-w-3xl mx-auto pt-10 lg:mr-[15.5rem] lg:pr-16')
+    nav(class='lg:fixed lg:z-20 lg:top-[3.8125rem] lg:bottom-0 lg:right-[max(0px,calc(50%-45rem))] lg:w-[19.5rem] lg:py-10 lg:px-8 lg:overflow-y-auto')
+      each part in summary.parts
+        a(href=filters.resolveFile(part.articles[0].path))
+        | #{part.title}
+        ul
+          each article in part.articles
+            li
+              a(href=filters.resolveFile(article.path), class=(article.path == file.path ? 'active' : '')) #{article.title}
       
-  article(class='mx-auto prose')
-    |!{ content }
-
+    article(class='prose')
+      |!{ content }
