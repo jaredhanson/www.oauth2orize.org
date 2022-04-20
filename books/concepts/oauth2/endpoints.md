@@ -32,5 +32,5 @@ app.post('/token',
 ```
 
 As this guide progresses and additional OAuth 2.0 concepts are explained, more
-details will be provided about how the middleware integrates with the
-OAuth2orize toolkit.
+details will be provided about how this middleware integrates with the other
+aspects of the OAuth2orize toolkit.

@@ -43,9 +43,9 @@ has to share her password with Budgetify.  When giving her consent, Alice can
 also indicate what _scope_ of access Budgetify is allowed.  In this instance,
 Budgetify's access can be restricted to only reading transactions, excluding
 unnecessary permissions such as making transfers.  The permitted scope is
-captured in the Budgetify's application-specific access token, avoiding the
-overly broad access that would otherwise have been allowed if Alice were to have
-shared her password.
+captured in Budgetify's application-specific access token, avoiding the overly
+broad access that would otherwise have been allowed if Alice were to have shared
+her password.
 
 In OAuth 2.0, applications such as Budgetify are referred to as _clients_,  APIs
 such as Alpha Bank's API are referred to as _resource servers_, and users such

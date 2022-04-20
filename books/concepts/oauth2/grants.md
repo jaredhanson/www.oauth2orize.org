@@ -57,3 +57,24 @@ as.exchange(oauth2orize.exchange.code(function issue(client, code, redirectURI, 
   // ...
 }));
 ```
+
+Corresponding to the table above, OAuth2orize exports a grant plugin for each
+grant type that uses the authorization endpoint.
+
+```
+oauth2orize.grant.code(...); // Authorization Code Grant
+oauth2orize.grant.token(...); // Implicit Grant
+```
+
+And OAuth2orize exports an exchange plugin for each grant type that uses the
+token endpoint.
+
+```
+oauth2orize.exchange.code(...); // Authorization Code Grant
+oauth2orize.exchange.password(...); // Password Grant
+oauth2orize.exchange.clientCredentials(...); // Client Credentials Grant
+```
+
+As this guide progresses and additional OAuth 2.0 concepts are explained, more
+details will be provided about how these plugines integrate with the other
+aspects of the OAuth2orize toolkit.
