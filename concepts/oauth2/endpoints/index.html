@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Hello</title>
+    <title>OAuth 2.0: Endpoints</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
@@ -19,11 +19,45 @@
       </nav>
     </header>
     <div>
-      <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <p class="mt-1 text-4xl font-extrabold text-gray-900 sm:text-5xl sm:tracking-tight lg:text-4xl">OAuth 2.0 authorization server toolkit for Node.js</p>
-          <p class="max-w-xl mx-auto mt-5 text-xl text-gray-500">OAuth2orize is a suite of Express middleware.  Combined with Passport authentication strategies and application-specific route handlers, OAuth2orize can be used to assemble an OAuth 2.0 server, including additional layers such as OpenID Connect.</p>
-        </div>
+      <div class="max-w-3xl mx-auto pt-10 lg:mr-[15.5rem] lg:pr-16">
+        <nav class="lg:fixed lg:z-20 lg:top-[3.8125rem] lg:bottom-0 lg:right-[max(0px,calc(50%-45rem))] lg:w-[19.5rem] lg:py-10 lg:px-8 lg:overflow-y-auto"><a href="/concepts/oauth2/"></a>
+          <ul>
+            <li><a href="/concepts/oauth2/">Overview</a></li>
+            <li><a href="/concepts/oauth2/use-case/">Use Case</a></li>
+            <li><a class="active" href="/concepts/oauth2/endpoints/">Endpoints</a></li>
+            <li><a href="/concepts/oauth2/grants/">Grants</a></li>
+          </ul>
+        </nav>
+        <article class="prose"><h1 id="endpoints">Endpoints</h1>
+<p>OAuth 2.0 servers expose two endpoints: an authorization endpoint and a token
+endpoint.</p>
+<p>The authorization endpoint is used to interact with the user and obtain consent
+to allow access.  This interaction occurs in the user&#39;s browser.  Applications
+send authorization requests to the OAuth 2.0 server by redirecting the user&#39;s
+browser to this endpoint.  Once the server receives the request, it interacts
+with the user via a series of HTML pages, to log the user in and obtain the
+user&#39;s consent.</p>
+<p>The token endpoint is used by the application to obtain access tokens, after the
+user has granted access.</p>
+<p>OAuth2orize provides <a href="https://expressjs.com/">Express</a> middleware to implement
+these endpoints.</p>
+<pre><code class="lang-js"><span class="keyword">var</span> <span class="keyword">as</span> = oauth2orize.createServer();
+
+app.get(<span class="string">'/authorize'</span>,
+  <span class="keyword">as</span>.authorize(validate, authorize),
+  <span class="function"><span class="keyword">function</span> <span class="title">interact</span>(<span class="params">req, res</span>) </span>{
+    <span class="comment">// ...</span>
+  });
+
+app.post(<span class="string">'/token'</span>,
+  passport.authenticate([<span class="string">'basic'</span>, <span class="string">'oauth2-client-password'</span>], { <span class="attr">session</span>: <span class="literal">false</span> }),
+  <span class="keyword">as</span>.token(),
+  <span class="keyword">as</span>.errorHandler());
+</code></pre>
+<p>As this guide progresses and additional OAuth 2.0 concepts are explained, more
+details will be provided about how this middleware integrates with the other
+aspects of the OAuth2orize toolkit.</p>
+</article>
       </div>
     </div>
     <footer class="bg-white">
