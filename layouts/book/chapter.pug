@@ -1,6 +1,15 @@
 extends ../layout
 
 block content
+  nav
+    each part in summary.parts
+      a(href=filters.resolveFile(part.articles[0].path))
+      | #{part.title}
+      ul
+        each article in part.articles
+          li
+            a(href=filters.resolveFile(article.path), class=(article.path == file.path ? 'active' : '')) #{article.title}
+      
   article(class='mx-auto prose')
     |!{ content }
 
