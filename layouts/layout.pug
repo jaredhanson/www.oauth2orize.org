@@ -6,7 +6,13 @@ html
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='https://rsms.me/inter/inter.css')
     link(rel='stylesheet', href='/assets/stylesheets/all.css')
+    script(async src='https://www.googletagmanager.com/gtag/js?id=G-PMZTG7B6GB')
+    script.
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
+      gtag('config', 'G-PMZTG7B6GB');
   body
     header(class='bg-orange-600')
       nav(class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8')
