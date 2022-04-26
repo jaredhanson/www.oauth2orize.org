@@ -1,6 +1,6 @@
 ---
 layout: 'home'
-title: 'Hello'
+title: 'OAuth2orize'
 author:
   name: "Jared Hanson"
   url: "http://www.jaredhanson.me/"
