@@ -76,5 +76,5 @@ oauth2orize.exchange.clientCredentials(...); // Client Credentials Grant
 ```
 
 As this guide progresses and additional OAuth 2.0 concepts are explained, more
-details will be provided about how these plugines integrate with the other
+details will be provided about how these plugins integrate with the other
 aspects of the OAuth2orize toolkit.
