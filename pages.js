@@ -14,7 +14,7 @@ site.content('content');
 
 site.generate([
     kerouac.contentCrawler(),
-    [ '/concepts/oauth2', require('kerouac-book').browser('books/concepts/oauth2') ],
+    [ '/concepts/oauth2', require('kerouac-book').browser('books/concepts/oauth2', false) ],
   ],
   function(err) {
     console.log('DONE!');
