@@ -10,6 +10,9 @@ block content
           each article in part.articles
             li
               a(href=filters.resolveFile(article.path), class=(article.path == file.path ? 'active' : '')) #{article.title}
-      
+    
+    //- Style the chapter's content using Tailwind CSS [Typography plugin][1].
+    //-
+    //- [1]: https://tailwindcss.com/docs/typography-plugin
     article(class='prose')
       |!{ content }
