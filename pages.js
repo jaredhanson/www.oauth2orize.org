@@ -9,7 +9,7 @@ site.set('base url', 'http://www.oauth2orize.org');
 site.set('layout engine', 'pug');
 site.locals.pretty = true;
 
-site.use('/concepts/oauth2', require('kerouac-book')('OAuth 2.0', 'books/concepts/oauth2', { layout: 'book' }));
+site.use('/concepts/oauth2', require('kerouac-book')('books/concepts/oauth2', { layout: 'book' }));
 site.content('content');
 //site.page('/sitemap.xml', require('kerouac-sitemap')());
 //site.page('/sitemap-index.xml', require('kerouac-sitemap').index());
