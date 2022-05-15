@@ -1,5 +1,8 @@
 extends layout
 
+block title
+  title= book.title + (file.path != readme.path ? ': ' + page.title : '')
+
 block content
   //- Based on utility classes used in Tailwind CSS [docs][1].
   //-
