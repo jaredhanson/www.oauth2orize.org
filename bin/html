@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+/**
+ * Module dependencies.
+ */
+
+var app = require('../site');
+var debug = require('debug')('www.oauth2orize.org:generator');
+var http = require('http');
+
+console.log('generate!');
