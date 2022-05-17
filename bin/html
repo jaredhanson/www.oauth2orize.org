@@ -4,8 +4,20 @@
  * Module dependencies.
  */
 
-var app = require('../site');
+var site = require('../site');
+var pages = require('../pages');
 var debug = require('debug')('www.oauth2orize.org:generator');
 var http = require('http');
 
 console.log('generate!');
+
+
+site.generate(pages,
+  function(err) {
+    console.log('DONE!');
+    if (err) {
+      console.error(err.message);
+      console.error(err.stack);
+      return;
+    }
+  });
