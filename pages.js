@@ -10,7 +10,8 @@ site.set('layout engine', 'pug');
 site.locals.pretty = true;
 
 site.use('/concepts/oauth2', require('kerouac-book')('books/concepts/oauth2'));
-site.content('content');
+site.use(kerouac.content('content'));
+
 //site.page('/sitemap.xml', require('kerouac-sitemap')());
 //site.page('/sitemap-index.xml', require('kerouac-sitemap').index());
 site.page('/robots.txt', require('kerouac-robotstxt')());
