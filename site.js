@@ -2,6 +2,7 @@
 
 var kerouac = require('kerouac');
 var book = require('kerouac-book');
+var robots = require('kerouac-robotstxt');
 
 var site = kerouac();
 site.engine('pug', require('pug'));
@@ -15,6 +16,6 @@ site.use(kerouac.content('content'));
 
 //site.page('/sitemap.xml', require('kerouac-sitemap')());
 //site.page('/sitemap-index.xml', require('kerouac-sitemap').index());
-site.page('/robots.txt', require('kerouac-robotstxt')());
+site.page('/robots.txt', robots());
 
 module.exports = site;
