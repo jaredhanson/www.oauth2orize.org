@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://www.oauth2orize.org/</loc>
-    <lastmod>2017-10-08T01:27:30+00:00</lastmod>
+    <loc>https://www.oauth2orize.org/</loc>
+    <lastmod>2022-04-30T22:23:43+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.oauth2orize.org/concepts/oauth2/</loc>
+    <lastmod>2022-04-09T14:17:22+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.oauth2orize.org/concepts/oauth2/use-case/</loc>
+    <lastmod>2022-04-20T13:59:47+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.oauth2orize.org/concepts/oauth2/endpoints/</loc>
+    <lastmod>2022-04-20T14:26:16+00:00</lastmod>
+  </url>
+  <url>
+    <loc>https://www.oauth2orize.org/concepts/oauth2/grants/</loc>
+    <lastmod>2022-04-29T14:33:05+00:00</lastmod>
   </url>
 </urlset>
