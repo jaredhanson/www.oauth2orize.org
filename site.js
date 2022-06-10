@@ -1,7 +1,7 @@
 //require('bixby')('org.kerouacjs/main', { dev: true });
 
 var kerouac = require('kerouac');
-var book = require('kerouac-book');
+var gitbook = require('kerouac-gitbook');
 var sitemap = require('kerouac-sitemap');
 var robots = require('kerouac-robotstxt');
 
@@ -12,7 +12,7 @@ site.set('base url', 'https://www.oauth2orize.org');
 site.set('layout engine', 'pug');
 site.locals.pretty = true;
 
-site.use('/concepts/oauth2', book('books/concepts/oauth2'));
+site.use('/concepts/oauth2', gitbook('books/concepts/oauth2'));
 site.use(kerouac.content('content'));
 
 site.page('/sitemap.xml', sitemap());
