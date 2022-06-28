@@ -9,5 +9,5 @@ module.exports = {
     sitemap.createMapper({ index: 'sitemap-index.xml' }),
     robots.createMapper()
   ],
-  '/concepts/oauth2': gitbook.createMapper('books/concepts/oauth2', false)
+  '/concepts/oauth2': gitbook.createMapper('books/concepts/oauth2')
 };
